@@ -1,5 +1,6 @@
 *.html
 *.xml
 **/node_modules
+logs
 /package-lock.json
 /package.json

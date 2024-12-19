@@ -7,10 +7,10 @@ Library            AppiumLibrary
 Start session
     Open Application    http://localhost:4723  
     ...    platformName=Android
-    ...    deviceName=Emulator
-    ...    automationName=UIAutomator2
-    ...    app="\\app\\smartbit-beta.apk",
-    ...    udid=emulator-5554
+    ...    appium:deviceName=Emulator
+    ...    appium:automationName=UIAutomator2
+    ...    appium:app=${EXECDIR}\\app\\smartbit-beta.apk
+    ...    appium:udid=emulator-5554
     ...    autoGrantPermissions=${True}
     
     Wait Until Page Contains    IP da API    30
