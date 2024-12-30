@@ -1,5 +1,0 @@
-Abrir emulador no android studio
-subir servidor appium "npx appium"
-abrir appium inspector e executar
-
-rodar projeto com robot -d ./logs tests\login.robot

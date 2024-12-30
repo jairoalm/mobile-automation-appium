@@ -10,10 +10,16 @@ Library    XML
 *** Test Cases ***
 
 Deve logar com CPF e IP
-    Input Text    xpath=//android.widget.EditText[@resource-id="ipAddress"]    192.168.1.11
-    Input Text    xpath=//android.widget.EditText[@resource-id="cpf"]    51676727833
+    Sigin with document    51676727833
+    User is logged in
 
-    Click Element   xpath=//android.widget.TextView[@text="Entrar"]
+Não deve logar com cpf não cadastrado
+    [Tags]    login_invalid
+    Sigin with document    43409505059    
+    Popup have text        Acesso não autorizado! Entre em contato com a central de atendimento
 
-    Wait Until Element Is Visible    xpath=//android.widget.TextView[@resource-id="myAccountTitle"]    10
-    Element Text Should Be    xpath=//android.widget.TextView[@resource-id="myAccountTitle"]    Sua transformação começa aqui!
+
+Não deve logar com cpf inválido
+    [Tags]    login_invalid
+    Sigin with document    43406705059    
+    Popup have text        CPF inválido, tente novamente
